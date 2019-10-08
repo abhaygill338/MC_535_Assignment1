@@ -4,7 +4,7 @@ After the selection of gesture and last name from the first screen, we download 
 <br/><br/>
 Requirements<br/>
 The app requires storage permissions.
-(Plz specify the version of andriod that we support)
+
 <br/><br/>
 Below is the list of URL's used to download the guesture videos: - <br/>
 Gift - https://www.signingsavvy.com/media/mp4-ld/23/23781.mp4<br/>
@@ -28,7 +28,4 @@ Should - https://www.signingsavvy.com/media/mp4-ld/9/9563.mp4<br/>
 Like - https://www.signingsavvy.com/media/mp4-ld/6/6394.mp4<br/>
 Movie - https://www.signingsavvy.com/media/mp4-ld/8/8626.mp4<br/>
 <br/>
-Built With (plz edit the libraies used)<br/>
-Dropwizard - The web framework used<br/>
-Maven - Dependency Management<br/>
-ROME - Used to generate RSS Feeds<br/>
+
