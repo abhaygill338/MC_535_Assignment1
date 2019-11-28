@@ -15,12 +15,26 @@ def storing_frequency_data(data_item,dict_freq):
 
 def find_frequency_max_items_in_a_cycle(dict_freq, no_of_items):
 	count = 0
+	list_items_frequent = []
 	for key,value in sorted(dict_freq.items(), key=lambda p:p[1], reverse=True):
 		if(count == no_of_items):
 			break
 		print(key,value)
+		list_items_frequent.append(key)
 		count += 1
 
+	return list_items_frequent
+
+def missing_items_present(list_items_frequent,latest_data):
+	flag = False
+	for i in range(0,len(latest_data)):
+		flag = False
+		for j in range(0,len(list_items_frequent)):
+			if(latest_data[i] == list_items_frequent[j]):
+				flag = True
+				break
+		if(flag == False):
+			print(latest_data[i]," ")
 
 if __name__ == '__main__':
 	
@@ -45,4 +59,6 @@ if __name__ == '__main__':
 	print('What number of maximum long-lasting items needed ?')
 	no_of_items = int(input())
 	print('Maximum number of long-lasting items needed in a particular cycle')
-	find_frequency_max_items_in_a_cycle(dict_freq, no_of_items)
+	list_items_frequent = find_frequency_max_items_in_a_cycle(dict_freq, no_of_items)
+	print('Missing items that the user need to buy...')
+	missing_items_present(list_items_frequent,all_data_list)
