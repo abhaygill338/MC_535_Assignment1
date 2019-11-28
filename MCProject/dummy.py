@@ -27,14 +27,14 @@ def find_frequency_max_items_in_a_cycle(dict_freq, no_of_items):
 
 def missing_items_present(list_items_frequent,latest_data):
 	flag = False
-	for i in range(0,len(latest_data)):
+	for i in range(0,len(list_items_frequent)):
 		flag = False
-		for j in range(0,len(list_items_frequent)):
-			if(latest_data[i] == list_items_frequent[j]):
+		for j in range(0,len(latest_data)):
+			if(list_items_frequent[i] == latest_data[j]):
 				flag = True
 				break
 		if(flag == False):
-			print(latest_data[i]," ")
+			print(list_items_frequent[i]," ")
 
 if __name__ == '__main__':
 	
