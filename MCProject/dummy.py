@@ -48,16 +48,18 @@ if __name__ == '__main__':
 		for j in range(0,len(data_item)):
 			text += data_item[j]+','
 		test.insert_item(date_list[i],text)
-	print('How many cycle days of data did we need')
-	cycle = int(input())
+	#print('How many cycle days of data did we need')
+	#cycle = int(input())
+	cycle = 30
 	all_data = test.data_based_on_cycle(cycle)
 	for i in range(0,len(all_data)):
 		all_data_list = all_data[i].split(",")
 		print(all_data_list," ")
 		storing_frequency_data(all_data_list,dict_freq)
 	print(dict_freq)
-	print('What number of maximum long-lasting items needed ?')
-	no_of_items = int(input())
+	#print('What number of maximum long-lasting items needed ?')
+	#no_of_items = int(input())
+	no_of_items = 5
 	print('Maximum number of long-lasting items needed in a particular cycle')
 	list_items_frequent = find_frequency_max_items_in_a_cycle(dict_freq, no_of_items)
 	print('Missing items that the user need to buy...')
