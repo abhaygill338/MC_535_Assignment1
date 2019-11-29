@@ -1,5 +1,12 @@
 import sys
+import glob
+import predict
+# list_items=[]
+# date_list=[]
 def getting_all_data():
+	location_img=''
+	img_list=glob.glob('pic/*')
+
 	list_items =[
 	['milk','bread','wheat','loaf','cereal'],
 	['milk','bread','eggs','loaf','cereal','yogurt'],
@@ -45,6 +52,12 @@ def getting_all_data():
 	,'1/8/2019','1/9/2019','1/10/2019','1/11/2019','1/12/2019','1/13/2019','1/14/2019','1/15/2019','1/16/2019','1/17/2019','1/18/2019',
 	'1/19/2019','1/20/2019','1/21/2019','1/22/2019','1/23/2019','1/24/2019','1/25/2019','1/26/2019','1/27/2019','1/28/2019','1/29/2019','1/30/2019',
 	'1/31/2019','2/1/2019','2/2/2019','2/3/2019','2/4/2019','2/5/2019','2/6/2019','2/7/2019']
+	for x in img_list:
+		result=getobjects(x)
+		date_name=x.split('_')[1]
+		list_items.append(result)
+		date_list.append(date_name)
+
 
 	return list_items,date_list
 
