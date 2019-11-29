@@ -2,8 +2,8 @@ import psycopg2
 
 def create_tables():
     try:
-        connection = psycopg2.connect(user = "abhay",
-                                  password = "9927001238",
+        connection = psycopg2.connect(user = "postgres",
+				  password = "shubham",
                                   host = "127.0.0.1",
                                   port = "5432",
                                   database = "items_tracker")
@@ -26,9 +26,9 @@ def create_tables():
 
 
 def insert_item(date,data_item):
-    connection = psycopg2.connect(user="abhay",
-                                  password="9927001238",
-                                  host="127.0.0.1",
+    connection = psycopg2.connect(user="postgres",
+                                  password = "shubham",
+				  host="127.0.0.1",
                                   port="5432",
                                   database="items_tracker")
     cursor = connection.cursor()
@@ -41,8 +41,8 @@ def insert_item(date,data_item):
     count = cursor.rowcount
 
 def data_based_on_cycle(days):
-    connection = psycopg2.connect(user="abhay",
-                                  password="9927001238",
+    connection = psycopg2.connect(user="postgres",
+				  password = "shubham",
                                   host="127.0.0.1",
                                   port="5432",
                                   database="items_tracker")
