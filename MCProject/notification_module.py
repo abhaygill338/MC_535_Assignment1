@@ -74,7 +74,7 @@ for row in m: print(' '.join('{0:.2f}'.format(x) for x in row))
 npM=np.array(m)
 
 #input from the missing item module.
-missing_list=['Milk','Eggs']
+missing_list=['cereal']
 if (prob_grocery('Home',3,npM))>0.01:
     send_mail('testmail@gmail.com',missing_list)
 

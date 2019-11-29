@@ -20,7 +20,7 @@ def find_frequency_max_items_in_a_cycle(dict_freq, no_of_items):
 	for key,value in sorted(dict_freq.items(), key=lambda p:p[1], reverse=True):
 		if(count == no_of_items):
 			break
-		print(key,value)
+		#print(key,value)
 		list_items_frequent.append(key)
 		count += 1
 
@@ -55,10 +55,10 @@ if __name__ == '__main__':
 	'''
 	text=""
 	obj=getobjects('clarifai-python/test4.jpeg')
-	print ("obj is ", obj)
+	print ("food objects in inputted image are -> ", obj)
 	for objects in obj:
 		text += objects.lower() +','
-	test.insert_item('2/10/2019',text)
+	test.insert_item('5/10/2019',text)
 	cycle = 30
 	all_data = test.data_based_on_cycle(cycle)
 	for i in range(0,len(all_data)):

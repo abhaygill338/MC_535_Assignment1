@@ -22,7 +22,7 @@ def create_tables():
         if(connection):
             cursor.close()
             connection.close()
-            print("PostgreSQL connection is closed") 
+            #print("PostgreSQL connection is closed") 
 
 
 def insert_item(date,data_item):
@@ -54,10 +54,10 @@ def data_based_on_cycle(days):
     parameter = ((cursor.rowcount) - days ,days)
     cursor.execute(sql_select_query_2 , parameter)
     record = cursor.fetchall()
-    print(record)
+    #print(record)
     list=[]
     for row in record:
-      print("Id = ", row[0])
+      #print("Id = ", row[0])
       list.append(row[1])
 
     return list
