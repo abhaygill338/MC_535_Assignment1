@@ -58,7 +58,7 @@ if __name__ == '__main__':
 	print ("food objects in inputted image are -> ", obj)
 	for objects in obj:
 		text += objects.lower() +','
-	test.insert_item('5/10/2019',text)
+	test.insert_item('02/06/2019',text)
 	cycle = 30
 	all_data = test.data_based_on_cycle(cycle)
 	for i in range(0,len(all_data)):
