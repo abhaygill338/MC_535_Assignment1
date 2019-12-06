@@ -2,7 +2,7 @@ import os
 import sys
 import test
 import list
-from predict import getobjects
+#from predict import getobjects
 
 def streaming_data_items_daywise(list_items):
 	return list_items
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 	ch = 'Y'
 	dict_freq = {}
 	test.create_tables()
-	'''	
+	
 	list_items,date_list = list.getting_all_data()
 	for i in range(0,len(date_list)):
 		data_item = streaming_data_items_daywise(list_items[i])
@@ -50,26 +50,24 @@ if __name__ == '__main__':
 		for j in range(0,len(data_item)):
 			text += data_item[j]+','
 		test.insert_item(date_list[i],text)
-	#print('How many cycle days of data did we need')
-	#cycle = int(input())
-	'''
+	
 	text=""
-	obj=getobjects('clarifai-python/test4.jpeg')
+	#obj=getobjects('clarifai-python/test4.jpeg')
+	obj = ["Milk","Eggs","Cereal"]
 	print ("food objects in inputted image are -> ", obj)
 	for objects in obj:
 		text += objects.lower() +','
-	test.insert_item('02/06/2019',text)
+	test.add_one_more_column()
+	test.insert_item('2/9/2019',text)
 	cycle = 30
 	all_data = test.data_based_on_cycle(cycle)
 	for i in range(0,len(all_data)):
 		all_data_list = all_data[i].split(",")
 		#print(all_data_list," ")
 		storing_frequency_data(all_data_list,dict_freq)
-	#print(dict_freq)
-	#print('What number of maximum long-lasting items needed ?')
-	#no_of_items = int(input())
 	no_of_items = 5
-	#print('Maximum number of long-lasting items needed in a particular cycle')
 	list_items_frequent = find_frequency_max_items_in_a_cycle(dict_freq, no_of_items)
 	print('Missing items that the user need to buy...')
 	missing_items_present(list_items_frequent,all_data_list)
+	test.adding_missing_element(list_items_frequent,cycle)
+

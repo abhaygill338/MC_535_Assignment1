@@ -1,6 +1,6 @@
 import sys
 import glob
-import predict
+#import predict
 # list_items=[]
 # date_list=[]
 def getting_all_data():
